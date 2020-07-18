@@ -20,14 +20,15 @@ a{
 }
 body{
     font-family:var(--main-family);
+    background:var(--main-bg);
 }
 #landing-page{
-    background:var(--main-bg);
+    
     height:100vh;
     position:relative;
     overflow: hidden;
     scroll-behavior: smooth;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .nav-nav-bar{
     display: flex;
@@ -52,9 +53,9 @@ body{
     color:#7265CF;
 }
 .nav-links>.link-item:hover{
-    background:#fafafa;
-    border:1px solid black;
-    padding:.5rem;
+    
+    
+    
     color:#7265CF;
     font-size: 1rem;
     font-weight: 900;
@@ -98,16 +99,27 @@ body{
         border-right:4px solid #370a9e;
     }
 }
+.contain{
+    display:flex;
+    justify-content:space-evenly;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    
+}
 .social-icons{
-    display: flex;
+    display:flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-    
     position: relative;
-    margin-right:5rem;
+    margin-left:10rem;
     text-align:center;
-    margin-top: 6rem;
+    width: 50%;
+    float:right;
+    margin-top:3rem;
+    
 }
 .social-icons > i{
    
@@ -115,12 +127,15 @@ body{
     font-size:1.5rem;
     color:#f1f1f1;
 }
+.social-icons > i:hover{
+    color:var(--sub-text-color);
+}
 /* Svg */
 .svg-i{
     display:flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    transform:translateY(-22rem);
-    
+    position: absolute;
+    width:50%;
+    margin-left:-3rem;
 }
