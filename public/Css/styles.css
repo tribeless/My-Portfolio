@@ -11,6 +11,7 @@
     sans-serif;
     --main-bg:#000000;
     --sub-text-color:#7265CF;
+    --sub-sub-color:linear-gradient(to-right, #AA076B, #61045F);
 }
 
 
@@ -26,9 +27,7 @@ body{
     
     height:100vh;
     position:relative;
-    overflow: hidden;
     scroll-behavior: smooth;
-    overflow-y: auto;
 }
 .nav-nav-bar{
     display: flex;
@@ -53,9 +52,6 @@ body{
     color:#7265CF;
 }
 .nav-links>.link-item:hover{
-    
-    
-    
     color:#7265CF;
     font-size: 1rem;
     font-weight: 900;
@@ -138,4 +134,56 @@ body{
     position: absolute;
     width:50%;
     margin-left:-3rem;
+}
+.cnt{
+    display:flex;
+    justify-content:center ;
+    margin-top:2rem;
+    margin-left:-1rem;
+}
+.divider{
+        border-style:none;
+        border-top-style: dotted;
+        border-color: #dbdbdb;
+        border-width: 5px;
+        width: 5%;
+        height: 0px;
+        
+}
+/* About Section */
+.big-heading {
+    margin-top:2rem;
+    font-size: 2rem;
+    background:linear-gradient(to right, #AA076B, #61045F); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 2rem;
+    word-spacing: .3rem;
+    white-space: nowrap;
+}
+.profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    padding:3rem 5rem;
+    background: url(../Images/blob.svg) no-repeat;
+    background-size: contain;
+    background-position: bottom 30% top 100%;
+    z-index:0;
+    
+}
+.profile>.profile-img{
+    height:400px;
+    width: 350px;
+    margin:0 2rem 0 5rem;
+}
+.profile>.bio{
+    font-size:1.4rem;
+    line-height: 2rem;
+    font-family:var(--sub-family);
+    color:#f1f1f1;
+    word-spacing: .6rem;
+    padding:0 3rem;
+    
 }
