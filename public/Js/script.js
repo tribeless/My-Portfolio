@@ -1,4 +1,4 @@
-//name()
+//fetching medium data
 fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@briankyole10")
 .then(response=>response.json())
 .then(
@@ -13,14 +13,8 @@ fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@bri
 
 )
 .catch(error => console.log(error))
-    
-// async function name(){
-//     await octokit.request('GET /repos/{owner}/{repo}/actions/artifacts', {
-//         owner: 'tribeless',
-//         repo: 'My-Portfolio'
-//     })
-// }
 
+//fetching github data
 fetch('https://api.github.com/users/tribeless/repos')
 .then(response=>response.json())
 .then(data=>{
