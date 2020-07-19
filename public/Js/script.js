@@ -1,4 +1,5 @@
 
+//fetching my medium post and displaying them
 fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@briankyole10")
 .then(response=>response.json())
 .then(
@@ -6,7 +7,7 @@ fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@bri
        var myBlog =  data.items;
         myBlog.forEach(item=>{
             
-            
+            //function to convert the html to plain text
             function convertDataString(data){
                 var conveter = document.createElement("div");
                 conveter.innerHTML = data;
@@ -14,7 +15,7 @@ fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@bri
                 return node;
 
             }
-
+//function to remove extra post content
             function splitExtraContent(item,startIndex,maxIndex){
                 if(item.length>maxIndex){
                     var newShortenedItem = item.slice(startIndex,maxIndex);
@@ -50,7 +51,6 @@ fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@bri
 
                 newParent.innerHTML = output;
                 holdingParent.appendChild(newParent);
-
          
        })
       
@@ -69,9 +69,12 @@ fetch('https://api.github.com/users/tribeless/repos')
 .then(response=>response.json())
 .then(data=>{
 
+    //arrays that have saved me a tone of error and stress
 const myPrefferedLanguages = ["HTML", "CSS", "JavaScript"];
 const preferredIndex = [3,4,5,6];
 
+
+//filter and get the stuff i want
 const filteredItems = data.filter(item=>{
     
     for(var i=0;i<myPrefferedLanguages.length;i++){
@@ -79,6 +82,8 @@ const filteredItems = data.filter(item=>{
         return item;
     }
 })
+
+//looping through my desired values and printing and displaying them
     for(var i=0;i<filteredItems.length;i++){
         for(var j=0;j<preferredIndex.length;j++){
             var output = "";
@@ -86,6 +91,7 @@ const filteredItems = data.filter(item=>{
             var numbersIndex = preferredIndex[j];
             if(existingItems===numbersIndex){
                 var newElement = document.createElement("div");
+                newElement.classList.add("my-project");
                 var parentElement = document.querySelector(".my-projects");
                 output+=
                 `
@@ -104,13 +110,12 @@ const filteredItems = data.filter(item=>{
                 `;
                 newElement.innerHTML = output;
                 parentElement.appendChild(newElement);
-                console.log(filteredItems[numbersIndex])
+                
             }
             else{
                 continue;
             }
         }
     }
-console.log(filteredItems)
 })
 .catch(error=>console.log(error))
