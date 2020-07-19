@@ -7,7 +7,7 @@ fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@bri
         myBlog.forEach(item=>{
             
             
-            function convertData(data){
+            function convertDataString(data){
                 var conveter = document.createElement("div");
                 conveter.innerHTML = data;
                 node = conveter.innerText;
@@ -29,16 +29,16 @@ fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@bri
 
                 output +=
                     `
-                    <a href="${item.link}" class="pub-link">
+                    <a href="${item.link}" class="pub-link" target="blank">
                                 <div class="blog-content">
                                     <div class="blog-thumbnail">
                                         <img src="${item.thumbnail}" alt="">
                                     </div>
                                     <div class="blog-title">
-                                        <h2>${splitExtraContent(item.title, 0, 10) + '...'}</h2>
+                                        <h2>${splitExtraContent(item.title, 0, 10) + ' ...'}</h2>
                                     </div>
                                     <div class="blog-post">
-                                        <p>${splitExtraContent('...'+convertData(item.description),60,100)+'...'}</p>
+                                        <p>${'... ' +splitExtraContent(convertDataString(item.description),60,100)+' ...'}</p>
                                     </div>
                                     <div class="btm-cnt">
                                         <span class="pub-dat">${splitExtraContent(item.pubDate,0, 11)}</span>
@@ -68,9 +68,48 @@ fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@bri
 fetch('https://api.github.com/users/tribeless/repos')
 .then(response=>response.json())
 .then(data=>{
-// console.log(data)
-data.forEach(item=>{
-    console.log(item.name, item.url, item.description, item.owner.login, item.language);
+
+const myPrefferedLanguages = ["HTML", "CSS", "JavaScript"];
+const preferredIndex = [3,4,5,6];
+let output = "";
+const filteredItems = data.filter(item=>{
+     
+    for(var i=0;i<myPrefferedLanguages.length;i++){
+        if (item.language === myPrefferedLanguages[i])
+        return item;
+    }
 })
+    for(var i=0;i<filteredItems.length;i++){
+        for(var j=0;j<preferredIndex.length;j++){
+            var existingItems = filteredItems.indexOf(filteredItems[i]);
+            var numbersIndex = preferredIndex[j];
+            if(existingItems===numbersIndex){
+                var newElement = document.createElement("div");
+                var parentElement = document.querySelector(".open");
+                output+=
+                `
+                        <a href="#" class="box">
+                        <div class="container">
+                        <div class="contents">
+                            <div class="name"><i class="fas fa-project-diagram tt" ></i>${filteredItems[numbersIndex].name}</div>
+                            <div class="description">${filteredItems[numbersIndex].description}</div>
+                            <span class="language"><i class="fas fa-code tt"></i>${filteredItems[numbersIndex].language}</span>
+                            <span class="github-link"><a href="123"
+                                    style="text-decoration:none;color:white;margin-right:1rem;"><i class="fab fa-github tt"></i>${filteredItems[i].html_url}</a></span>
+                            <span class="user-name"><i class="fas fa-user tt"></i>${filteredItems[numbersIndex].owner.login}</span>
+                        </div>
+                    </div>
+                </a>
+                `;
+                newElement.innerHTML = output;
+                parentElement.appendChild(newElement);
+                
+            }
+            else{
+                continue;
+            }
+        }
+    }
+console.log(filteredItems)
 })
 .catch(error=>console.log(error))
