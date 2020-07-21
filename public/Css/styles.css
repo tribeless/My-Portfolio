@@ -25,7 +25,9 @@ body{
     background:var(--main-bg);
     overflow:hidden;
     scroll-behavior: smooth;
+    /* overflow-y: scroll; */
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 #landing-page{
     
@@ -247,7 +249,7 @@ body{
 /* My Projects */
 .projects {
     margin-top:2rem;
-    padding: 3% 5% 3% 0;
+    padding: 3% 5% 3% 5%;
     background: black;
     
 }
@@ -438,4 +440,91 @@ body{
     background:#141414;
     margin-bottom: 0;
     padding:2rem;
+}
+
+/* All media query breakpoints */
+@media only screen and (max-width:1200px) {
+    .my-projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+        grid-template-rows: minmax(100px, auto);
+        grid-auto-flow: dense;
+        /* place-items: center;  */
+    }
+    /* .my-project{
+        grid-column: unset;
+        grid-row:unset;
+    } */
+    .my-project:nth-child(1){
+        transform:translateX(0);
+        grid-column: unset;
+        grid-row:unset;
+        
+    }
+    .my-project:nth-child(2){
+        margin-left:0;
+        grid-column: unset;
+        grid-row:unset;
+    }
+    .my-project:nth-child(3){
+grid-column: unset;
+grid-row:unset;
+    }
+    .my-project:nth-child(4){
+        transform:translateX(0);
+        grid-column: unset;
+        grid-row:unset;
+    }
+    .big-heading {
+        margin-top: 2rem;
+        font-size: 2rem;
+        color: var(--sub-text-color);
+        line-height: .5rem;
+        word-spacing: .3rem;
+        white-space: nowrap;
+}
+    .sec-text>.skills {
+        background: linear-gradient(to right, #AA076B, #61045F);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .main-text>.big-text {
+        margin-top: 2rem;
+        font-size: 1.25rem;
+        color: var(--sub-text-color);
+        animation: info 4s steps(40) 1, blink 1s ease-in-out infinite;
+        line-height: 1.5rem;
+        word-spacing: .3rem;
+        width: 40ch;
+        padding:.5rem;
+        overflow: hidden;
+        white-space: nowrap;
+
+    }
+    .profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+        flex-wrap:wrap;
+        padding: 3rem 5rem;
+        background: url(../Images/blob.svg) no-repeat;
+        background-size: contain;
+        background-position: bottom 30% top 100%;
+        z-index: 0;
+
+    }
+    .profile>.bio {
+        font-size: 1.4rem;
+        line-height: 2rem;
+        font-family: 'Montserrat',
+            sans-serif;
+        color: #f1f1f1;
+        word-spacing: .6rem;
+        text-align:center;
+
+    }
 }

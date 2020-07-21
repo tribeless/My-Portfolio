@@ -119,3 +119,4 @@ const filteredItems = data.filter(item=>{
     }
 })
 .catch(error=>console.log(error))
+//	&#9776;=> hamburger menu
