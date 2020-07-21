@@ -25,7 +25,6 @@ body{
     background:var(--main-bg);
     overflow:hidden;
     scroll-behavior: smooth;
-    /* overflow-y: scroll; */
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -127,7 +126,12 @@ body{
     .nav-nav-bar{
         padding-left:0;
     }
-
+    .main-text>.big-text {
+        font-size:1.8rem;
+    }
+.sec-text>.skills {
+    font-size:1.6rem;
+}
 }
 
 /* Main Landing Page Contents */
@@ -163,7 +167,7 @@ body{
         width:0ch;
     }
     100%{
-        width: 45ch;
+        width: 40ch;
     }
 }
 @keyframes blink{
