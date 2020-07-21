@@ -26,13 +26,16 @@ body{
     overflow:hidden;
     scroll-behavior: smooth;
     overflow-y: scroll;
-    overflow-x: hidden;
+    /* overflow-x: scroll; */
 }
 #landing-page{
     
     height:auto;
     position:relative;
     z-index:0;
+        overflow:hidden;
+        scroll-behavior: smooth;
+        
     
 }
 .nav-nav-bar{
@@ -158,7 +161,7 @@ body{
     line-height: 3rem;
     word-spacing: .3rem;
     width: 40ch;
-    overflow: hidden;
+    /* overflow: hidden; */
     white-space: nowrap;
     
 }
@@ -235,6 +238,9 @@ body{
 /* About Section */
 .about-me{
     margin-top:2rem;
+        overflow:hidden;
+        scroll-behavior: smooth;
+        
 }
 .big-heading {
     margin-top:2rem;
@@ -275,6 +281,9 @@ body{
         /* Why me */
 .row-md-lg{
    margin-top: 2rem;
+       overflow:hidden;
+       scroll-behavior: smooth;
+       
 }
 .top>.reason{
     text-align:center;
@@ -320,6 +329,9 @@ body{
     margin-top:2rem;
     padding: 3% 5% 3% 5%;
     background: black;
+        overflow:hidden;
+        scroll-behavior: smooth;
+        
     
 }
 .my-projects{
@@ -415,6 +427,9 @@ body{
     /* Blog section */
 .blog-sec{
     margin:0 5%;
+        overflow:hidden;
+        scroll-behavior: smooth;
+        
 }
 .top-hd>.bb {
     font-size:2rem;
@@ -480,6 +495,9 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+        overflow:hidden;
+        scroll-behavior: smooth;
+        
 }
 .con-btn>button{
     /* border-radius:0 0 20px 20px; */
@@ -510,6 +528,9 @@ body{
     margin-bottom: 0;
     padding:2rem;
     width:100%;
+        overflow:hidden;
+        scroll-behavior: smooth;
+        
 }
 
 /* All media query breakpoints */
