@@ -1,4 +1,4 @@
-
+'use strict';
 //fetching my medium post and displaying them
 fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@briankyole10")
 .then(response=>response.json())
@@ -11,8 +11,8 @@ fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@bri
             function convertDataString(data){
                 var conveter = document.createElement("div");
                 conveter.innerHTML = data;
-                node = conveter.innerText;
-                return node;
+                data = conveter.innerText;
+                return data;
 
             }
 //function to remove extra post content
@@ -120,3 +120,28 @@ const filteredItems = data.filter(item=>{
 })
 .catch(error=>console.log(error))
 //	&#9776;=> hamburger menu
+
+//creating the hamburger menu
+var toggle = document.querySelector(".toggle");
+var openMenu = document.querySelector(".nav-links");
+toggle.addEventListener("click", () => {
+    if (openMenu.className === "nav-links") {
+            openMenu.classList.add("show");
+        }
+        else {
+            openMenu.classList.remove("show");
+        }
+    
+    
+})
+reduceMyBioInfo();
+//Reducing my bio content
+function reduceMyBioInfo(){
+    var a = document.querySelector(".bio").innerText;
+    var startLength = 0;
+    var maxLength = 100;
+    if(a.length>maxLength){
+      var b= a.split(startLength,maxLength);
+      a.innerText = b; 
+    }
+}
