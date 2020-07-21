@@ -69,9 +69,15 @@ fetch('https://api.github.com/users/tribeless/repos')
 .then(response=>response.json())
 .then(data=>{
 
+    let dailyWeather = "http://forecast.herokuapp.com/";
+    let formValidate = "https://validatetemplate.netlify.app/";
+    let myPortfolio = "C:\Users\Brian Kyole\Desktop\My-Portfolio\index.html";
+    let saveIt = "https://save-task.netlify.app/";
+
     //arrays that have saved me a tone of error and stress
 const myPrefferedLanguages = ["HTML", "CSS", "JavaScript"];
 const preferredIndex = [3,4,5,6];
+const projectLinks = [dailyWeather,formValidate,myPortfolio,saveIt];
 
 
 //filter and get the stuff i want
@@ -89,13 +95,15 @@ const filteredItems = data.filter(item=>{
             var output = "";
             var existingItems = filteredItems.indexOf(filteredItems[i]);
             var numbersIndex = preferredIndex[j];
+            
             if(existingItems===numbersIndex){
-                var newElement = document.createElement("div");
-                newElement.classList.add("my-project");
-                var parentElement = document.querySelector(".my-projects");
-                output+=
-                `
-                        <a href="#" target="blank" class="box">
+                
+                    var newElement = document.createElement("div");
+                    newElement.classList.add("my-project");
+                    var parentElement = document.querySelector(".my-projects");
+                    output +=
+                        `
+                        <a href="" target="blank" class="box">
                         <div class="container">
                         <div class="contents">
                             <div class="name"><i class="fas fa-project-diagram tt" ></i>${filteredItems[numbersIndex].name}</div>
@@ -108,10 +116,12 @@ const filteredItems = data.filter(item=>{
                     </div>
                 </a>
                 `;
-                newElement.innerHTML = output;
-                parentElement.appendChild(newElement);
+                    newElement.innerHTML = output;
+                    parentElement.appendChild(newElement);
+
                 
-            }
+                }
+                
             else{
                 continue;
             }
@@ -134,14 +144,14 @@ toggle.addEventListener("click", () => {
     
     
 })
-reduceMyBioInfo();
-//Reducing my bio content
-function reduceMyBioInfo(){
-    var a = document.querySelector(".bio").innerText;
-    var startLength = 0;
-    var maxLength = 100;
-    if(a.length>maxLength){
-      var b= a.split(startLength,maxLength);
-      a.innerText = b; 
-    }
-}
+// reduceMyBioInfo();
+// //Reducing my bio content
+// function reduceMyBioInfo(){
+//     var a = document.querySelector(".bio").innerText;
+//     var startLength = 0;
+//     var maxLength = 100;
+//     if(a.length>maxLength){
+//       var b= a.split(startLength,maxLength);
+//       a.innerText = b; 
+//     }
+// }
