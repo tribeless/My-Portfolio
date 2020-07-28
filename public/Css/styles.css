@@ -26,15 +26,15 @@ body{
     overflow:hidden;
     scroll-behavior: smooth;
     overflow-y: scroll;
-    /* overflow-x: scroll; */
+    
 }
 #landing-page{
     
     height:auto;
     position:relative;
     z-index:0;
-        overflow:hidden;
-        scroll-behavior: smooth;
+    overflow:hidden;
+    scroll-behavior: smooth;
         
     
 }
@@ -236,7 +236,7 @@ body{
         
 }
 /* About Section */
-.about-me{
+#about-me{
     margin-top:2rem;
         overflow:hidden;
         scroll-behavior: smooth;
@@ -325,7 +325,7 @@ body{
 }
 
 /* My Projects */
-.projects {
+#projects {
     margin-top:2rem;
     padding: 3% 5% 3% 5%;
     background: black;
@@ -395,7 +395,7 @@ body{
 .description {
     margin: 1rem;
 }
-.projects>.hd{
+#projects>.hd{
  text-align:center;
 }
 .hd{
@@ -431,7 +431,7 @@ body{
 }
 
     /* Blog section */
-.blog-sec{
+#blog-sec{
     margin:0 5%;
         overflow:hidden;
         scroll-behavior: smooth;
@@ -479,7 +479,6 @@ body{
 .blog-post > p{
     line-height:2rem;
     word-spacing: .6rem;
-    /* letter-spacing: .1rem; */
     font-size:1rem;
     margin:1rem 0;
     font-family:var(--sub-family)
@@ -489,7 +488,7 @@ body{
 
 }
 /* Contact Section */
-.contact{
+#contact{
     padding:1.5rem;
     display: flex;
     align-items: center;
@@ -512,11 +511,6 @@ body{
     cursor:pointer;
 }
 .social-icons-btm{
-        /* display:flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 50%; */
         margin-top:2rem;
 }
 .social-icons-btm>i{
@@ -541,7 +535,6 @@ body{
         grid-template-columns: repeat(auto-fit, minmax(300px, auto));
         grid-template-rows: minmax(100px, auto);
         grid-auto-flow: dense;
-        /* place-items: center;  */
     }
 
     .my-project:nth-child(1){
