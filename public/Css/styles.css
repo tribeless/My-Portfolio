@@ -329,8 +329,8 @@ body{
     margin-top:2rem;
     padding: 3% 5% 3% 5%;
     background: black;
-        overflow:hidden;
-        scroll-behavior: smooth;
+    overflow:hidden;
+    scroll-behavior: smooth;
         
     
 }
@@ -372,7 +372,13 @@ body{
 .my-project:nth-child(4){
     grid-column:span 3;
     grid-row:span 1;
-   transform:translateX(20%);
+    transform:translateX(20%);
+}
+.my-project:nth-child(5) {
+    grid-column: span 3;
+    grid-row: span 1;
+    transform:translateX(20%);
+    
 }
 .language{
     margin-right: 1rem;
@@ -450,14 +456,9 @@ body{
     text-decoration:none;
     color:white;
     
-    /* margin-top:2rem; */
 }
 .blog-content{
-    /* display:flex;
-    flex-wrap: wrap;
-    align-items:center;
-    justify-content: center;
-    flex-direction: column; */
+ 
     padding:3%;
     margin:3rem;
     width:300px;
@@ -490,7 +491,6 @@ body{
 /* Contact Section */
 .contact{
     padding:1.5rem;
-    /* background:#141414; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -499,8 +499,8 @@ body{
         scroll-behavior: smooth;
         
 }
-.con-btn>button{
-    /* border-radius:0 0 20px 20px; */
+.con-btn>a{
+    text-decoration: none;
     background:var(--sub-sub-color);
     font-size:1rem;
     font-family: 'Montserrat',
@@ -509,6 +509,7 @@ body{
     border:none;
     outline: hidden;
     padding:1rem;
+    cursor:pointer;
 }
 .social-icons-btm{
         /* display:flex;
@@ -555,13 +556,18 @@ body{
         grid-row:unset;
     }
     .my-project:nth-child(3){
-grid-column: unset;
-grid-row:unset;
+        grid-column: unset;
+        grid-row:unset;
     }
     .my-project:nth-child(4){
         transform:translateX(0);
         grid-column: unset;
         grid-row:unset;
+    }
+    .my-project:nth-child(5) {
+        grid-column: unset;
+        grid-row: unset;
+        margin-left: 0;
     }
     .big-heading {
         margin-top: 2rem;

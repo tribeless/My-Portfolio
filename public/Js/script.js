@@ -69,15 +69,12 @@ fetch('https://api.github.com/users/tribeless/repos')
 .then(response=>response.json())
 .then(data=>{
 
-    let dailyWeather = "http://forecast.herokuapp.com/";
-    let formValidate = "https://validatetemplate.netlify.app/";
-    let myPortfolio = "C:\Users\Brian Kyole\Desktop\My-Portfolio\index.html";
-    let saveIt = "https://save-task.netlify.app/";
+
 
     //arrays that have saved me a tone of error and stress
 const myPrefferedLanguages = ["HTML", "CSS", "JavaScript"];
-const preferredIndex = [3,4,5,6];
-const projectLinks = [dailyWeather,formValidate,myPortfolio,saveIt];
+const preferredIndex = [3,4,5,6,7];
+
 
 
 //filter and get the stuff i want
@@ -88,7 +85,7 @@ const filteredItems = data.filter(item=>{
         return item;
     }
 })
-
+console.log(filteredItems)
 //looping through my desired values and printing and displaying them
     for(var i=0;i<filteredItems.length;i++){
         for(var j=0;j<preferredIndex.length;j++){
