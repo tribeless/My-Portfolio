@@ -139,14 +139,3 @@ toggle.addEventListener("click", () => {
     
     
 })
-// reduceMyBioInfo();
-// //Reducing my bio content
-// function reduceMyBioInfo(){
-//     var a = document.querySelector(".bio").innerText;
-//     var startLength = 0;
-//     var maxLength = 100;
-//     if(a.length>maxLength){
-//       var b= a.split(startLength,maxLength);
-//       a.innerText = b; 
-//     }
-// }
