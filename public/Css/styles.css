@@ -189,28 +189,7 @@ body{
     margin-top: 2rem;
     
 }
-.social-icons{
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    position: relative;
-    margin-left:10rem;
-    text-align:center;
-    width: 50%;
-    float:right;
-    margin-top:3rem;
-    
-}
-.social-icons > i{
-   
-    margin-bottom:3.5rem;
-    font-size:1.5rem;
-    color:#f1f1f1;
-}
-.social-icons > i:hover{
-    color:var(--sub-text-color);
-}
+
 /* Svg */
 .svg-i{
     display:flex;
