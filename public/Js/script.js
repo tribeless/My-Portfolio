@@ -69,11 +69,9 @@ fetch('https://api.github.com/users/tribeless/repos')
 .then(response=>response.json())
 .then(data=>{
 
-
-
     //arrays that have saved me a tone of error and stress
 const myPrefferedLanguages = ["HTML", "CSS", "JavaScript"];
-const preferredIndex = [3,4,5,6,7];
+const preferredIndex = [1,2,4,5,6];
 
 
 
