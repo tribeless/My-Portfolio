@@ -161,7 +161,6 @@ body{
     line-height: 3rem;
     word-spacing: .3rem;
     width: 40ch;
-    /* overflow: hidden; */
     white-space: nowrap;
     
 }
@@ -217,9 +216,7 @@ body{
     display:flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
     width:50%;
-    margin-left:-3rem;
 }
 .cnt{
     display:flex;
@@ -513,10 +510,10 @@ body{
 .social-icons-btm{
         margin-top:2rem;
 }
-.social-icons-btm>i{
+.social-icons-btm>a{
      margin-right:1rem; 
-    font-size:1rem;
-    color:#f1f1f1;
+     font-size:1rem;
+     color:#f1f1f1;
 }
 .footer{
     background:#141414;
